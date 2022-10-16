@@ -1,0 +1,8 @@
+.homepage-container{
+    height: 100vh;
+    background-image: url(../assets/Images/SpaceBG1.jpg);
+    background-size: 100% 150%;
+    background-position: left 40%; 
+    background-repeat: no-repeat;
+    color: var(--cWhite);
+}

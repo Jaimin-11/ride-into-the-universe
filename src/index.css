@@ -1,0 +1,24 @@
+:root {
+  --cGreen: #24DD87;
+  --cWhite: #FFF9FB;
+  --cBlack1: #353535;
+  --cBlack2: #292929;
+}
+@font-face {
+  font-family: TWCenMT;
+  src: url(./assets/fonts/TwCenMTStd.otf) format('opentype');
+}
+*{
+  box-sizing: border-box;
+}
+html{
+  width: 100%;
+  font-family: TWCenMT; 
+}
+body{
+  width: 100%;
+  margin: 0 0;
+}
+.App{
+  width: 100%;
+}
