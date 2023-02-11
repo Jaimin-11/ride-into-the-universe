@@ -1,0 +1,22 @@
+#discover {
+    height: 99vh;
+    overflow-y: auto;
+    justify-content: flex;
+    align-items: center;
+    background-color: var(--cBlack2);
+}
+
+.discover-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 0rem;
+    margin-bottom: 5rem;
+    overflow: auto;
+}
+@media only screen and (max-width:1250px) {
+    .discover-container {
+        margin-bottom: 10rem;
+    }
+}

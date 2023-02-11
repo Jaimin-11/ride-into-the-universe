@@ -9,14 +9,14 @@ function Navbar() {
 
   setTimeout(() => {
     let currentPath = location.pathname;
-    if (currentPath !== "/")document.getElementById(location.pathname.slice(1)).className +=" " + "nav-link-active";
-  }, 50);
+    if (currentPath === "/") document.getElementById('home').className = "nav-link-active";
+    if (currentPath !== "/") document.getElementById(location.pathname.split("/")[1]).className = "nav-link-active";
+  }, 100);
 
   return (
     <nav className='nav-container'>
+      <li><NavLink id="home" className='nav-link' to="/">HOME</NavLink></li>
       <li><NavLink id="discover" className='nav-link' to="/discover">DISCOVER</NavLink></li>
-      <li><NavLink id="solar_system" className='nav-link' to="/solar_system">SOLAR SYSTEM</NavLink></li>
-      <li><NavLink id="apod" className='nav-link' to="/apod">APOD</NavLink></li>
     </nav>
   );
 }

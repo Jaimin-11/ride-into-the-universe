@@ -1,0 +1,43 @@
+@keyframes AnimBorderRotation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.loading-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cWhite);
+}
+
+.l-rotate {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#00FF00FF 9%, #00000000 80%);
+
+    animation-name: AnimBorderRotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.l-rotate::before {
+    content: "";
+    position: absolute;
+    z-index: 1 !important;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    margin: auto auto;
+    width: 130px;
+    height: 130px;
+    background: var(--cBlack1);
+    border-radius: 50%;
+}

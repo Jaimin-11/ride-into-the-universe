@@ -1,6 +1,8 @@
-.header-container{
+.header-container {
+    z-index: 2;
     position: sticky;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
@@ -9,86 +11,189 @@
     background-color: var(--cBlack2);
     border-bottom: 1px solid var(--cWhite);
 }
-.main-heading{
+
+.main-heading {
     text-decoration: none;
     position: absolute;
     left: 0.5rem;
     color: var(--cWhite);
     font-size: 2rem;
 }
-.search-container{
+
+.search-container {
+    z-index: 5;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
 }
-.search-bar-collapsed{
+
+.search-box-closed {
+    display: none;
+    position: relative;
+}
+
+.search-box-opened {
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    padding: 1% 1%;
+    background: var(--cWhite);
+}
+
+@keyframes searchBarAnimClose {
+    0% {
+        width: 95vw;
+        display: block;
+    }
+
+    99% {
+        width: 0;
+        display: block;
+    }
+
+    100% {
+        width: 0;
+        display: none;
+    }
+}
+
+.search-bar-collapsed {
     display: none;
 }
-@keyframes searchBarAnimOpen{
-    from {width: 0;}
-    to {width: 40vw;}
+
+@keyframes searchBarAnimOpen {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 95vw;
+    }
 }
-.search-bar-wide{
+
+.search-bar-wide {
     display: block;
     animation-name: searchBarAnimOpen;
-    animation-duration: 300ms;
+    animation-duration: 700ms;
     animation-iteration-count: 1;
-    width: 40vw;
+    width: 95vw;
     letter-spacing: 0.2rem;
     padding: 0.5rem 0.2rem;
     color: var(--cBlack1);
-    border: none;
+    border: 2px dashed rgba(0, 0, 0, 0.5);
+    border-right: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     outline: none;
-    transition: 300ms;
+    transition: 700ms;
 }
-.search-icon{
+
+.search-icon {
     width: 1.2rem;
     height: 1.2rem;
 }
-#GoArrowIcon{
+
+#GoArrowIcon:hover,
+.search-icon:hover {
+    cursor: pointer;
+}
+
+#GoArrowIcon {
     display: none;
-    background-color: var(--cWhite);
+    background-color: var(--cGreen);
     padding: 0.25rem 0.25rem;
     margin-right: 0.5rem;
+    border: 2px dashed rgba(0, 0, 0, 0.5);
+    border-left: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.nav-container{
+
+.nav-container {
     display: flex;
+    height: 3.3rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0.25rem;
+    margin-right: 1rem;
 }
-.nav-container li{
+
+.nav-container>li {
     list-style: none;
+    height: 3.3rem;
+    padding: 1rem 0.5rem;
 }
-.nav-container>li:nth-child(2){
-    margin: 0rem 0.5rem;
+
+@keyframes navLinkHoverAnim1 {
+    0% {
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid;
+    }
+
+    99% {
+        padding-bottom: 1rem;
+        border-bottom: 0px solid;
+    }
+
+    100% {
+        padding-bottom: 0.1rem;
+        border-bottom: 0px solid;
+    }
 }
-.nav-link{
+
+.nav-link {
     text-decoration: none;
     color: var(--cWhite);
     background-color: transparent;
     font-size: 1.2rem;
     padding: 0.1rem 0.5rem;
     transition: 0.2s;
+    padding-bottom: 1rem;
     border-bottom: 0px solid;
 }
-.nav-link:hover{
+
+@keyframes navLinkHoverAnim2 {
+    0% {
+        padding-bottom: 1rem;
+    }
+
+    100% {
+        padding-bottom: 0.1rem;
+    }
+}
+
+.nav-container>li:hover>.nav-link {
+    padding-bottom: 0.1rem;
     box-shadow: inset 0 -1px 0px var(--cWhite);
 }
-.nav-link-active{
-    box-shadow: inset 0px -1.7rem 0px var(--cWhite);
+
+.nav-link-active {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--cGreen);
-    background-color: var(--cWhite);
+    padding: 0.1rem 0.5rem;
+    border-bottom: 0px solid;
+    box-shadow: inset 0px 0px 5px var(--cBlack1);
+    background-color: var(--cWhite) !important;
     transition: 0.2s;
 }
-.user-icon-svg{
+
+.user-icon-svg {
     width: 2rem;
     vertical-align: middle;
+}
+
+@media only screen and (max-width:750px) {
+    .header-container {
+        justify-content: center;
+    }
+
+    .main-heading {
+        position: static;
+        margin: auto;
+    }
 }

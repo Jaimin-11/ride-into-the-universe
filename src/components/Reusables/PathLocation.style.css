@@ -1,0 +1,45 @@
+#PathHistory {
+    display: flex;
+    color: var(--cGreen);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.tooltip {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    left: 3.5%;
+    z-index: 1;
+    font-size: 0.7rem;
+    width: fit-content;
+    background-color: var(--cWhite);
+    color: var(--cBlack2);
+    text-align: center;
+    transform: translate(-3rem, 1.5rem);
+    padding: 0.1rem 0.1rem;
+    border-radius: 0.2rem;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 0.6;
+}
+
+.path-tab-link {
+    text-decoration: none;
+    opacity: 1;
+    color: var(--cGreen);
+    transition: 0.2s;
+}
+.path-tab-link:hover {
+    opacity: 0.5;
+}

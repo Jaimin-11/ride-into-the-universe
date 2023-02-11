@@ -1,8 +1,15 @@
+@keyframes bgAnim{
+    from {background-size: 160% 160%;}
+    to {background-size: 100% 120%;}
+}
 .homepage-container{
     height: 100vh;
     background-image: url(../assets/Images/SpaceBG1.jpg);
-    background-size: 100% 150%;
-    background-position: left 40%; 
+    background-size: 100% 120%;
+    background-position: top; 
     background-repeat: no-repeat;
     color: var(--cWhite);
+    animation-name: bgAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
 }

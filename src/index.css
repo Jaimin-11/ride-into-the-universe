@@ -1,9 +1,24 @@
 :root {
-  --cGreen: #24DD87;
+  --cGreen: #04ff19;
   --cWhite: #FFF9FB;
   --cBlack1: #353535;
   --cBlack2: #292929;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--cBlack2);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--cGreen);
+}
+
 @font-face {
   font-family: TWCenMT;
   src: url(./assets/fonts/TwCenMTStd.otf) format('opentype');
@@ -13,10 +28,13 @@
 }
 html{
   width: 100%;
-  font-family: TWCenMT; 
+  font-family: TWCenMT;
+  overflow-y: hidden;
 }
 body{
   width: 100%;
+  height: 100%;
+  background-color: var(--cBlack1);
   margin: 0 0;
 }
 .App{
