@@ -10,6 +10,7 @@ import "./Apod.style.css";
 
 function Apod() {
     const [isLoading, setIsLoading] = useState(true);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
     const [apod, setApod] = useState();
 
     const getData = async () => {
@@ -39,7 +40,8 @@ function Apod() {
                 {console.log(apod)}
                 <div className='apod-info'>
                     <div className='apod-image-container'>
-                        <img src={apod.url} alt="Image not avilable" />
+                        {isImageLoaded === false ? <Loading waitFor={"Picture"} /> : ''}
+                        <img src={apod.url} alt="Image not avilable" onLoad={() => setIsImageLoaded(true)} />
                         {apod.hdurl !== "" ? <a href={apod.hdurl} target="_blank">Click to see HD image🔗</a> : ''}
                     </div>
                     <div className='apod-i-box'>
